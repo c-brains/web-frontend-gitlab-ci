@@ -1,0 +1,45 @@
+{
+  "extends": ["eslint:recommended"],
+  "plugins": [],
+  "parserOptions": {},
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "node": true,
+    "es6": false
+  },
+  "globals": {},
+  "rules": {
+    // 行末のセミコロンは必須
+    "semi": ["error", "always"],
+    // インデントは2スペース
+    "indent": ["error", 2],
+    // 行末のスペースを禁止
+    "no-trailing-spaces": ["error"],
+    // 文字列リテラルはシングルコーテーションで囲む
+    "quotes": ["warn", "single"],
+    // キーワードの前後にはスペースが必要
+    "keyword-spacing": ["error"],
+    // 変数名はcamelCaseで
+    "camelcase": "error",
+    // 括弧スタイルは one true brace style(1tbs) http://eslint.org/docs/rules/brace-style#tbs
+    "brace-style": "error",
+    // if, while, try-catchなどでは必ずブロックを使う
+    "curly": "error",
+    // 比較は必ず ===, !== を使う
+    "eqeqeq": "error",
+    // with文は使わない
+    "no-with": "error",
+    // evalは使わない
+    "no-eval": "error",
+    // String, Number, Boolean はnewしない
+    "no-new-wrappers": "error",
+    // 要素を列挙した配列定義に new Array(...), Array(...) を使わない
+    "no-array-constructor": "error",
+    // new Object() を使わない
+    "no-new-object": "error",
+    "new-cap": "error",
+    // this を代入するときはthisを使う
+    "consistent-this": ["error", "that"]
+  }
+}

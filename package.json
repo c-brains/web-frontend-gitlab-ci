@@ -1,0 +1,32 @@
+{
+  "name": "frontend-ci",
+  "version": "1.0.0",
+  "description": "exec eslint, stylelint, html lint...",
+  "main": "index.js",
+  "repository": "git@github.com:c-brains/web-frontend-gitlab-ci.git",
+  "author": "Koji Tanaka <tenkoma@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^3.12.1",
+    "htmlhint": "^0.9.13",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2",
+    "stylelint": "^7.6.0",
+    "stylelint-config-standard": "^15.0.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "eslint": "eslint .",
+    "eslint-report": "npm run eslint -- --format html --output-file ./eslint-report.html",
+    "htmlhint": "htmlhint",
+    "stylelint": "stylelint \"./**/*.css\" \"./**/*.scss\"",
+    "test": "mocha --reporter=dot ./test/js/",
+    "test-report": "mocha --reporter=doc ./test/js/ > ./mocha-report.html"
+  }
+}

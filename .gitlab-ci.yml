@@ -1,0 +1,28 @@
+image: "node:6.9"
+variables:
+  BUNDLE_CACHE: "node_modules/"
+cache:
+  untracked: false
+  paths:
+    - ~/.npm/
+    - node_modules/
+stages:
+  - test
+before_script:
+  - npm -v
+  - npm install --silent --no-progress
+test:
+  stage: test
+  script:
+    - npm --silent run htmlhint
+    - npm --silent run eslint
+    - npm --silent run stylelint
+    - npm --silent test
+    - npm --silent run eslint-report || true
+    - npm --silent run test-report || true
+  artifacts:
+    name: report
+    expire_in: 31d
+    paths:
+    - eslint-report.html
+    - mocha-report.html
